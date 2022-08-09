@@ -47,6 +47,91 @@ var savedDisplay = function () {
     }, 2000);
 }
 
+var momentCompare = function () {
+    var currentMinutes = today.format("HH");
+    var hour1time = moment("9:00 AM", "h:mm A").format("HH");
+    if(hour1time == currentMinutes) {
+        desc1El.css('background-color', 'red');
+    }
+    else if (hour1time > currentMinutes) {
+        desc1El.css('background-color', 'green')
+    }
+    else { desc1El.css('background-color', 'gray')}
+    
+    var hour2time = moment("10:00 AM", "h:mm A").format("HH");
+    if(hour2time == currentMinutes) {
+        desc2El.css('background-color', 'red');
+    }
+    else if (hour2time > currentMinutes) {
+        desc2El.css('background-color', 'green')
+    }
+    else { desc2El.css('background-color', 'gray')}
+
+    var hour3time = moment("11:00 AM", "h:mm A").format("HH");
+    if(hour3time == currentMinutes) {
+        desc3El.css('background-color', 'red');
+    }
+    else if (hour3time > currentMinutes) {
+        desc3El.css('background-color', 'green')
+    }
+    else { desc3El.css('background-color', 'gray')}
+
+    var hour4time = moment("12:00 AM", "h:mm A").format("HH");
+    if(hour4time == currentMinutes) {
+        desc4El.css('background-color', 'red');
+    }
+    else if (hour4time > currentMinutes) {
+        desc4El.css('background-color', 'green')
+    }
+    else { desc4El.css('background-color', 'gray')}
+
+    var hour5time = moment("1:00 PM", "h:mm A").format("HH");
+    if(hour5time == currentMinutes) {
+        desc5El.css('background-color', 'red');
+    }
+    else if (hour5time > currentMinutes) {
+        desc5El.css('background-color', 'green')
+    }
+    else { desc5El.css('background-color', 'gray')}
+
+    var hour6time = moment("2:00 PM", "h:mm A").format("HH");
+    if(hour6time == currentMinutes) {
+        desc6El.css('background-color', 'red');
+    }
+    else if (hour6time > currentMinutes) {
+        desc6El.css('background-color', 'green')
+    }
+    else { desc6El.css('background-color', 'gray')}
+
+    var hour7time = moment("3:00 PM", "h:mm A").format("HH");
+    if(hour7time == currentMinutes) {
+        desc7El.css('background-color', 'red');
+    }
+    else if (hour7time > currentMinutes) {
+        desc7El.css('background-color', 'green')
+    }
+    else { desc7El.css('background-color', 'gray')}
+
+    var hour8time = moment("4:00 PM", "h:mm A").format("HH");
+    if(hour8time == currentMinutes) {
+        desc8El.css('background-color', 'red');
+    }
+    else if (hour8time > currentMinutes) {
+        desc8El.css('background-color', 'green')
+    }
+    else { desc8El.css('background-color', 'gray')}
+
+    var hour9time = moment("5:00 PM", "h:mm A").format("HH");
+    if(hour9time == currentMinutes) {
+        desc9El.css('background-color', 'red');
+    }
+    else if (hour9time > currentMinutes) {
+        desc9El.css('background-color', 'green')
+    }
+    else { desc9El.css('background-color', 'gray')}
+}
+
+
 button1El.on('click', function () {
     var newText = desc1El.val();
     localStorage.setItem('savedText1', newText);
@@ -104,4 +189,6 @@ loadSaved = function() {
     desc8El.text(localStorage.getItem('savedText8'));
     desc9El.text(localStorage.getItem('savedText9'));
 }
+
+momentCompare();
 loadSaved();
