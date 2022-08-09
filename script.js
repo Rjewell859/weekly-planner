@@ -33,14 +33,12 @@ var hour7El = $('#hour7');
 var hour8El = $('#hour8');
 var hour9El = $('#hour9');
 
-
 var today = moment();
 var dayWeek = today.format("dddd, MMM Do");
 var currentTime = today.format("hhA");
 currentDayEl.text(dayWeek);
 
 var savedDisplay = function () {
-
     savedEl.text("Event saved in ");
     localEl.text("local storage ✔");
     savedEl.append(localEl);
@@ -48,6 +46,7 @@ var savedDisplay = function () {
         savedEl.text('')
     }, 2000);
 }
+
 button1El.on('click', function () {
     var newText = desc1El.val();
     localStorage.setItem('savedText1', newText);
@@ -93,12 +92,16 @@ button9El.on('click', function () {
     localStorage.setItem('savedText9', newText);
     savedDisplay();
 })
-desc1El.text(localStorage.getItem('savedText1'));
-desc2El.text(localStorage.getItem('savedText2'));
-desc3El.text(localStorage.getItem('savedText3'));
-desc4El.text(localStorage.getItem('savedText4'));
-desc5El.text(localStorage.getItem('savedText5'));
-desc6El.text(localStorage.getItem('savedText6'));
-desc7El.text(localStorage.getItem('savedText7'));
-desc8El.text(localStorage.getItem('savedText8'));
-desc9El.text(localStorage.getItem('savedText9'));
+
+loadSaved = function() {
+    desc1El.text(localStorage.getItem('savedText1'));
+    desc2El.text(localStorage.getItem('savedText2'));
+    desc3El.text(localStorage.getItem('savedText3'));
+    desc4El.text(localStorage.getItem('savedText4'));
+    desc5El.text(localStorage.getItem('savedText5'));
+    desc6El.text(localStorage.getItem('savedText6'));
+    desc7El.text(localStorage.getItem('savedText7'));
+    desc8El.text(localStorage.getItem('savedText8'));
+    desc9El.text(localStorage.getItem('savedText9'));
+}
+loadSaved();
